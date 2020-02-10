@@ -1,0 +1,12 @@
+/**
+ * Project: [project_name]
+ * Author: [project_author]
+ * Date: [project_date]
+ *
+ * Commons.xill defines system specific functions, which directly access the API
+ * it serves as an abstraction of the API, to make import/export bots more reusable.
+ */
+
+//-------------------------------------------------------------------------
+//						  FUNCTIONS
+//-------------------------------------------------------------------------

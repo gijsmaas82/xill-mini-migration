@@ -1,0 +1,31 @@
+/**
+ * Project: [project_name]
+ * Author: [your_name]
+ * Date: [current_date]
+ *
+ * Export.xill exports all users and content from your source system and places them in the UDM.
+ * BEFORE FIRST RUN:
+ * - Make sure all neccessary library and connector bots are present in lib/ and connector/ 
+ * - Configure server and folder settings in xill.properties in the project root
+ * - Create a mapping robot for every ContentType in the export/mappings/ folder with the name 
+ *   [ContentType].xill
+ */
+ 
+use Properties;
+
+include lib.util.AllUtil;
+include project.Commons;
+include connector.fsCrawler.export.Export as Export;
+
+//-------------------------------------------------------------------------
+//						  SETUP
+//-------------------------------------------------------------------------
+
+var database = getUDMConnection(Properties.get("db.name"));
+
+
+//-------------------------------------------------------------------------
+//						  MAIN
+//-------------------------------------------------------------------------
+
+Export->export(Properties.get("export.root"), database);

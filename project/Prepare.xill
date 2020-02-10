@@ -1,0 +1,26 @@
+/**
+ * Project: [project_name]
+ * Author: [your_name]
+ * Date: [current_date]
+ *
+ * project/Prepare.xill prepares project specific set up, like the indexes in MongoDB
+ */
+ 
+use Mongo, Properties;
+
+include lib.util.AllUtil;
+include project.Commons;
+
+//-------------------------------------------------------------------------
+//						  MAIN
+//-------------------------------------------------------------------------
+
+callbot ("config/UDMContentTypes.xill");
+
+var dbName = Properties.get("udm.name");
+
+
+
+//-------------------------------------------------------------------------
+//						  FUNCTIONS
+//-------------------------------------------------------------------------

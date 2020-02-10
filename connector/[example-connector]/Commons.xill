@@ -1,0 +1,12 @@
+/**
+ * Project: [project_name]
+ * Author: [project_author]
+ * Date: [project_date]
+ *
+ * Commons.xill defines system specific utility functions, which do not directly access the API
+ */
+
+//-------------------------------------------------------------------------
+//						  FUNCTIONS
+//-------------------------------------------------------------------------
+

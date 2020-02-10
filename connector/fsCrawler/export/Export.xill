@@ -1,0 +1,27 @@
+use File, System, Mongo;
+
+include connector.fsCrawler.API;
+include config.Mapper;
+
+function export(path, connection){
+
+    var files = File.iterateFiles(path, true);
+    
+    foreach(counter, file in files){
+        
+        if(counter % 5 == 0)
+        {
+            System.print("Proccessing, counter: " :: counter, "INFO");
+        }
+    
+        var fileObject = {
+          "path"  : file,
+          "hash" : getHash(file),
+        };
+        
+        
+        var fileMapped = mapObject(fileObject, "FsFile");
+        
+        Mongo.insertOne("documents", fileMapped, connection);
+    }
+}

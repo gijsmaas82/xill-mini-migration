@@ -1,0 +1,12 @@
+/**
+ * Project: [project_name]
+ * Author: [project_author]
+ * Date: [project_date]
+ *
+ * Prepare.xill runs the neccessary preparation steps (such as running the Build.xill robot from the mapper plugin)
+ */
+
+//-------------------------------------------------------------------------
+//						  FUNCTIONS
+//-------------------------------------------------------------------------
+

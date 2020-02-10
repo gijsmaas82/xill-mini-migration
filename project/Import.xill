@@ -1,0 +1,28 @@
+/**
+ * Project: [project_name]
+ * Author: [your_name]
+ * Date: [current_date]
+ *
+ * Import.xill imports all users and content from the UDM into your target system.
+ * BEFORE FIRST RUN:
+ * - Make sure all neccessary library and connector bots are present in lib/ and connector/ 
+ * - Configure server and folder settings in xill.properties in the project root
+ * - Create a mapping robot for every ContentType in the import/mappings/ folder with the name 
+ *   [ContentType].xill
+ */
+ 
+use Properties;
+
+include lib.util.AllUtil;
+include project.Commons;
+
+//-------------------------------------------------------------------------
+//						  SETUP
+//-------------------------------------------------------------------------
+
+var database = getUDMConnection(Properties.get("db.name"));
+
+
+//-------------------------------------------------------------------------
+//						  MAIN
+//-------------------------------------------------------------------------

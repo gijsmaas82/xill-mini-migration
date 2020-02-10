@@ -1,0 +1,30 @@
+use File, String, System, Hash;
+
+/**
+ * Project: [project_name]
+ * Author: [project_author]
+ * Date: [project_date]
+ *
+ * Commons.xill defines system specific functions, which directly access the API
+ * it serves as an abstraction of the API, to make import/export bots more reusable.
+ */
+
+//-------------------------------------------------------------------------
+//						  FUNCTIONS
+//-------------------------------------------------------------------------
+
+
+//remove the path from file, returns only the filename
+function getFileName(file) {
+    var match = String.regex(file, "^.*[/\\\\](.*?)$");
+    if (match != null) {
+        return match[1];
+    } else {
+        return null;
+    }
+}
+
+function getHash(path){
+    var fileStream = File.openRead(path);
+    return Hash.toMD5(fileStream);
+}
