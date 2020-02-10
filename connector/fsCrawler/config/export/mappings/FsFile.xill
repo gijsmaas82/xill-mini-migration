@@ -59,6 +59,7 @@ function mapObject(document, data) {
         "original" : {
             "fileSystem" : {
                 "path" : data.path,
+                "size": data.size
             }
         }
     };

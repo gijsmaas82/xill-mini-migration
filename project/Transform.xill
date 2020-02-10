@@ -30,9 +30,9 @@ var database = getUDMConnection(Properties.get("db.name"));
 transform(database);
 
 function transform(connection){
-    var documents = Mongo.aggregate("documents", [{"$group":{"_id":"$original.hash.md5","count":{"$sum":1}}}], {}, connection);
+    var documents = Mongo.find("documents");
     foreach(doc in documents)
     {
-       Mongo.update("documents", {"original.hash.md5":doc._id}, {"$set":{"migration.flag":true}}, {}, connection);
+       Mongo.update("documents", {}, {"$set":{"migration":doc.original}}, {}, connection);
     }
 }

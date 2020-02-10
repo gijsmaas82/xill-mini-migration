@@ -17,8 +17,9 @@ function export(path, connection){
         var fileObject = {
           "path"  : file,
           "hash" : getHash(file),
+          "size": File.getSize(file)
         };
-        
+        System.print(fileObject);
         
         var fileMapped = mapObject(fileObject, "FsFile");
         
